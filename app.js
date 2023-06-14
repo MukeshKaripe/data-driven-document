@@ -36,3 +36,7 @@ const bar =  container.selectAll('.bar').data(DUMMY_DATA)
 .style('height',data => 500 - yscale( data.value))
  .attr('x', data => xscale(data.country))
  .attr('y', data => yscale(data.value)) ;
+
+ setTimeout(() => {
+    bar.data(DUMMY_DATA.slice(0,2)).exit().remove();
+ },2000);
